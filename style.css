@@ -1,0 +1,86 @@
+body {font-family:arial;}
+
+#form-border {
+  border-style: solid;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px 48px;
+  color: #ffffff;
+  background-color: #333740;
+  font-family: sans-serif;
+  font-weight: lighter;
+  border-radius: 10px;
+}
+.box {
+  background-color: #2c2f34;
+  padding: 9px 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 9px;
+  border-radius: 5px;
+}
+
+#submit {
+  text-align: center;
+  color: #ffffff;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-color: #465059;
+  cursor: pointer;
+}
+h4 {
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+h3 {
+  font-weight: normal;
+  text-align: center;
+}
+#field1 {
+  color: #ffffff;
+  font-size: 15px;
+  padding-left: 7px;
+  font-family: sans-serif;
+}
+.box::-webkit-input-placeholder {
+   padding-left: 7px;
+   font-size:13px;
+}
+select {
+    color: #ffffff;
+    background:transparent;
+    height:32px;
+    border:1px solid #d8d8d8;
+    width: 100%;
+}
+
+.issue_date {
+  width:50%;
+}
+
+.expiry_date {
+  width:50%;
+}
+
+.cvc {
+  width: 30%;
+}
+
+a, .button {
+  border-radius:5px;
+  background-color:#c1d130;
+  width:25%;
+  text-align:center;
+  padding: 7px 14px;
+  color:#596a76;
+  font-weight:bold;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {max-width:100%;}
+  .drop { display:block !important; width: 100% !important; float:left; clear:both;}
+  .mobile-padding {padding: 16px !important;}
+}
