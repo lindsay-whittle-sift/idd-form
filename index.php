@@ -1,6 +1,38 @@
 <?php
-
-   // If the content inputted has been entered into the credit card form,
+   
+   $fnameerr = $snameerr = $cardnumbererr = $issuemontherr = $issueyeareer = $expmontherr = $expyearerr = $securityerr = "";
+   $fname = $sname = $cardnumber = $issuemonth = $issueyear = $expmonth = $expyear = $security = "";
+   $submission_status = FALSE;
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $submission_status = TRUE;
+    if (empty($_POST["fname"])) {
+      $fnameerr = "Id is required";
+      $submission_status = FALSE;
+    }
+    if (empty($_POST["sname"])) {
+      $snameerr = "Name is required";
+      $submission_status = FALSE;
+    }
+    if (empty($_POST["cardnumber"])) {
+      $cardnumbererr = "Year is required";
+      $submission_status = FALSE;
+    }
+    if (empty($_POST["issuemonth"])) {
+      $issuemontherr = "Director name is required";
+      $submission_status = FALSE;
+    }
+      if($submission_status==TRUE){
+      $fname = isset($_POST['fname']) ? $_POST['fname'] : null;
+      $sname = isset($_POST['sname']) ? $_POST['sname'] : null;
+      $cardnumber = isset($_POST['cardnumber']) ? $_POST['cardnumber'] : null;
+      $issuemonth = isset($_POST['issuemonth']) ? $_POST['issuemonth'] : null;
+      $issueyear = isset($_POST['issueyear']) ? $_POST['issueyear'] : null;
+      $expmonth = isset($_POST['expmonth']) ? $_POST['expmonth'] : null;
+      $expyear = isset($_POST['expyear']) ? $_POST['expyear'] : null;
+      $security = isset($_POST['security']) ? $_POST['security'] : null;
+   }
+}
+   /* If the content inputted has been entered into the credit card form, 
    if(isset($_POST['submit'])){
       $fname = isset($_POST['fname']) ? $_POST['fname'] : null;
       $sname = isset($_POST['sname']) ? $_POST['sname'] : null;
@@ -10,7 +42,6 @@
       $expmonth = isset($_POST['expmonth']) ? $_POST['expmonth'] : null;
       $expyear = isset($_POST['expyear']) ? $_POST['expyear'] : null;
       $security = isset($_POST['security']) ? $_POST['security'] : null;
-
       // echo what the content that has been entered is.
       echo 'First name: ' . $fname . '<br>';
       echo 'Surname name: ' . $sname . '<br>';
@@ -19,30 +50,23 @@
       echo 'Expiry month: ' . $expmonth . '<br>';
       echo 'Expiry year: ' . $expyear . '<br>';
       echo 'Security code: ' . $security . '<br>';
-
-
    // create a function to remove any spaces between the credit card numbers
    function remove_spaces($text){
       return str_replace(" ", "", $text);
    }
-
    // create a variable for function remove_spaces
    $cardnumber_break = remove_spaces($cardnumber);
    // var_dump($cardnumber_break);  //Check that the variable for the function is printing out the card number correctly.
-
    // create a variable to split the credit card numbers into 4 spaces
    $arr = str_split($cardnumber_break, 4);
    /* var_dump that the string,
-   credit card number had been split into sections of four.*/
+   credit card number had been split into sections of four.
    //var_dump($arr);
-
    // create a variable and add a '-' in each of the spaces
    $dash_separated = implode("-", $arr);
-
    // echo the correctly formatted credit card number
    echo 'Card number: ' . $dash_separated;
-}
-
+}*/
 ?>
 <html>
    <head>
@@ -159,7 +183,7 @@
             </div>
             <br>
             <div>
-               <input type="submit" name="submit" value="submit">
+               <input type="submit" name="submit" value="submit">   
             </div>
          </form>
       </div>
