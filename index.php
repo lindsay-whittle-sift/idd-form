@@ -1,6 +1,6 @@
 <?php
 include('form-function.php');
-include('unit-test.php');
+
 // If form is not empty, once submitted, print the following;
 
 if(!empty($_POST['submit'])){
@@ -93,7 +93,7 @@ if(!empty($_POST['submit'])){
       echo "Your security number is a required field<br>";
     }
 
-    echo remove_spaces($cardnumber);
+    //echo parse_card_details($input);
   }
 
 
@@ -103,23 +103,29 @@ if(!empty($_POST['submit'])){
 <html>
    <head>
       <title>Form!</title>
+      <!-- link to html style sheet -->
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
+   <!-- Start of html form -->
    <body class="container" style="line-height:26px;">
       <div id="form-border">
          <form action="index.php" method="POST">
             <h3><strong>Complete credit card details</strong></h3>
             <h4>First name</h4>
+            <!-- Enter first name -->
             <input type="text" name="fname" value="" class="box" placeholder="First name">
             <h4>Second name</h4>
+            <!-- Enter second name -->
             <input type="text" name="sname" value="" class="box" placeholder="Second name">
             <h4>Card number</h4>
+            <!-- Enter cardnumber -->
             <input type="text" name="cardnumber" value="" class="box" placeholder="Card Number">
             <div>
                <div class="issue_date">
                   <label for="ccMonth">
                      <h4>Issue date</h4>
                   </label>
+                  <!-- Enter issue month -->
                   <select name="issuemonth">
                     <option value="" name="issuemonth"selected="selected"> </option>
                      <option value="Jan" name="issuemonth">01</option>
@@ -138,6 +144,7 @@ if(!empty($_POST['submit'])){
                </div>
                <br>
                <div class="issue_date">
+                <!-- Enter issue year -->
                   <select name="issueyear">
                      <option value="" name="issueyear" selected="selected"> </option>
                      <option value="2015" name="issueyear">2015</option>
@@ -169,6 +176,7 @@ if(!empty($_POST['submit'])){
                   <label for="ccMonth">
                      <h4>Expiration date</h4>
                   </label>
+                  <!-- Enter expiry month -->
                   <select id="ccMonth" name="expmonth">
                      <option value="" name="expmonth" selected="selected"> </option>
                      <option value="Jan" name="expmonth">01</option>
@@ -188,6 +196,7 @@ if(!empty($_POST['submit'])){
                   <br>
                   <div>
                      <select id="ccYear" name="expyear">
+                      <!-- Enter expiry year -->
                       <option value="" name="expyear" selected="selected"> </option>
                         <option value="2015" name="expyear">2015</option>
                         <option value="2016" name="expyear">2016</option>
@@ -215,13 +224,16 @@ if(!empty($_POST['submit'])){
                </div>
             <div class="cvc">
                <h4>Security code (cvc)</h4>
+               <!-- Enter security code -->
                <input type="text" name="security" value="" class="box">
             </div>
             <br>
             <div>
+              <!-- Submit form -->
                <input type="submit" name="submit" value="submit">   
             </div>
          </form>
       </div>
    </body>
+   <!-- End of html form -->
 </html>
